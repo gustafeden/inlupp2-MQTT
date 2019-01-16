@@ -18,6 +18,15 @@
     <ClInclude Include="__vm\.inlupp2_MQTT.vsarduino.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Broker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Radio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Setup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Feather-broker.ino" />

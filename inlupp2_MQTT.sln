@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Feather", "inlupp2_MQTT.vcxproj", "{C5F80730-F44F-4478-BDAE-6634EFC2CA88}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MCU-oled", "MCU-oled\MCU-oled.vcxproj", "{DF97CE88-78E7-414E-A91C-1A817DF4BC78}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Nano-dht", "Nano-dht\Nano-dht.vcxproj", "{0406E1C6-2265-4839-8931-DC3FF56D9684}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Huzzah", "..\Huzzah\Huzzah.vcxproj", "{556E7CFE-A983-42E4-B248-4D402E8D7E05}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +15,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Debug|x86.ActiveCfg = Debug|Win32
-		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Debug|x86.Build.0 = Debug|Win32
-		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|x86.ActiveCfg = Release|Win32
-		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|x86.Build.0 = Release|Win32
 		{DF97CE88-78E7-414E-A91C-1A817DF4BC78}.Debug|x86.ActiveCfg = Debug|Win32
 		{DF97CE88-78E7-414E-A91C-1A817DF4BC78}.Debug|x86.Build.0 = Debug|Win32
 		{DF97CE88-78E7-414E-A91C-1A817DF4BC78}.Release|x86.ActiveCfg = Release|Win32
@@ -27,6 +23,10 @@ Global
 		{0406E1C6-2265-4839-8931-DC3FF56D9684}.Debug|x86.Build.0 = Debug|Win32
 		{0406E1C6-2265-4839-8931-DC3FF56D9684}.Release|x86.ActiveCfg = Release|Win32
 		{0406E1C6-2265-4839-8931-DC3FF56D9684}.Release|x86.Build.0 = Release|Win32
+		{556E7CFE-A983-42E4-B248-4D402E8D7E05}.Debug|x86.ActiveCfg = Debug|Win32
+		{556E7CFE-A983-42E4-B248-4D402E8D7E05}.Debug|x86.Build.0 = Debug|Win32
+		{556E7CFE-A983-42E4-B248-4D402E8D7E05}.Release|x86.ActiveCfg = Release|Win32
+		{556E7CFE-A983-42E4-B248-4D402E8D7E05}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

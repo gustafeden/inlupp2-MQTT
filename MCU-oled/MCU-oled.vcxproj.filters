@@ -24,5 +24,8 @@
     <ClInclude Include="Setup.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="OledDisplay.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
