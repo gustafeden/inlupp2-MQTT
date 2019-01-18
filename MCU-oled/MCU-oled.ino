@@ -3,7 +3,12 @@
  Created:	1/16/2019 2:02:09 PM
  Author:	gusta
 */
+/*
+TODO::
+change from string to json
+*/
 #include <Arduino.h>
+#include <ArduinoJson.h>
 #include <WiFi.h>
 #include <WiFiMulti.h>
 #include <PubSubClient.h>
@@ -27,11 +32,11 @@ int value = 0;
 // the setup function runs once when you press reset or power the board
 void setup() {
 	pinMode(BUILTIN_LED, OUTPUT);
+	pinMode(5, OUTPUT);
 	initSerial(115200);
 	display.WelcomeScreen();
 	delay(1000);
 	initMultiWifi();
-
 	randomSeed(micros());
 	client.setServer(mqtt_server, 1883);
 	client.setCallback(callback);

@@ -21,5 +21,11 @@
     <ClInclude Include="__vm\.Nano-dht.vsarduino.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Radio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dht11.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

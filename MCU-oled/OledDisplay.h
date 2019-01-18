@@ -60,15 +60,20 @@ public:
 		} while (display->nextPage());
 		delay(500);
 	}
-	void mqttConnected(const char* sub_topic,const char * TempHumid = nullptr) {
+	void ShowData(const char * Temp = nullptr, const char* Humid = nullptr) {
+		String writeTemp, writeHumid;
+		writeTemp += "Temp: " + (String)Temp + " *C";
+		writeHumid += "Humid: " + (String)Humid + " %";
+
 		display->setFont(u8g2_font_crox1hb_tf);
 		display->firstPage();
 		do {
-			display->drawStr(5, 10, "Subscribed to:");
-			display->drawStr(5, 25, sub_topic);
-			if (TempHumid != nullptr) {
-				display->drawStr(5, 40, "Recieved:");
-				display->drawStr(5, 55, TempHumid);
+			display->drawStr(31, 10, "Connected");
+			display->drawLine(5,15,123,15);
+			display->drawLine(5, 60, 123, 60);
+			if (Temp != nullptr) {
+				display->drawStr(10, 30, writeTemp.c_str());
+				display->drawStr(10, 50, writeHumid.c_str());
 			}
 		} while (display->nextPage());
 	}
