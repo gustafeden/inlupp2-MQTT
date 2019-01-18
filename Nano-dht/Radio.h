@@ -10,7 +10,7 @@ private:
 	uint8_t buf[32];
 	uint8_t buflen;
 	void sendf(const char* messageToSend) {
-		String StringToSend = (String)RFKEY + ',' + (String)messageToSend;
+		String StringToSend = (String)RF_KEY + ',' + (String)messageToSend;
 		radio->send((uint8_t *)StringToSend.c_str(), 32);
 		if (!radio->waitPacketSent())
 			Serial.println("WaitPacketSent failed");

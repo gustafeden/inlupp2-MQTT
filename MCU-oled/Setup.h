@@ -49,15 +49,6 @@ void initSerial(int baud) {
 
 }
 
-String getTempString(String msg) {
-	//String return_str = msg.substring(0,msg.indexOf('h'));
-	return  msg.substring(0, msg.indexOf('h'));
-}
-String getHumidString(String msg) {
-	//String return_str = msg.substring(0,msg.indexOf('h'));
-	return  msg.substring(msg.indexOf('h'), msg.length());
-}
-
 void callback(char* topic, byte* payload, unsigned int length) {
 	Serial.print("Message arrived [");
 	Serial.print(topic);
@@ -75,29 +66,23 @@ void callback(char* topic, byte* payload, unsigned int length) {
 
 }
 void reconnect() {
-	// Loop until we're reconnected
 	while (!client.connected()) {
 		Serial.print("Attempting MQTT connection...");
-		// Create a random client ID
 		display.mqttConnecting(mqtt_server);
 		blink(2,100, BUILTIN_LED);
 		delay(1300);
 		String clientId = "ESP8266Client-";
 		clientId += String(random(0xffff), HEX);
-		// Attempt to connect
 		if (client.connect(clientId.c_str())) {
 			Serial.println("Client connected");
 			client.subscribe(mqtt_topic);
 			Serial.print(" My client id: ");
 			Serial.println(clientId);
-			//display.showSuccess();
-			//display.mqttConnected(mqtt_topic);
 		}
 		else {
 			Serial.print("failed, rc=");
 			Serial.print(client.state());
 			Serial.println(" try again in 5 seconds");
-			// Wait 5 seconds before retrying
 			delay(5000);
 		}
 	}

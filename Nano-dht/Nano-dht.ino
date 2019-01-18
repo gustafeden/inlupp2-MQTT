@@ -5,17 +5,18 @@
 */
 #include <Arduino.h>
 #include <ArduinoJson.h>
-const char* RFKEY = "gug";
+
+const char* RF_KEY = "gug";
 #define DHTPIN 2 
+
 #include "Radio.h"
 #include "dht11.h"
-
 
 RFradio *radio;
 DHT11sensor *dht;
 unsigned long currentMillis;
 unsigned long lastSent;
-// the setup function runs once when you press reset or power the board
+
 void setup() {
 	Serial.begin(9600);
 	radio = new RFradio(new RH_ASK());
@@ -23,7 +24,6 @@ void setup() {
 
 }
 
-// the loop function runs over and over again until power down or reset
 void loop() {
 	currentMillis = millis();
 	if (currentMillis - lastSent > 4000) {

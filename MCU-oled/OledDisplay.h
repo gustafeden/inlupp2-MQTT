@@ -52,14 +52,6 @@ public:
 			display->drawStr(10, 45, serverIP);
 		} while (display->nextPage());
 	}
-	void showSuccess() {
-		display->setFont(u8g2_font_crox1hb_tf);
-		display->firstPage();
-		do {
-			display->drawStr(20, 40, "Success!");
-		} while (display->nextPage());
-		delay(500);
-	}
 	void ShowData(const char * Temp = nullptr, const char* Humid = nullptr) {
 		String writeTemp, writeHumid;
 		writeTemp += "Temp: " + (String)Temp + " *C";
@@ -76,8 +68,5 @@ public:
 				display->drawStr(10, 50, writeHumid.c_str());
 			}
 		} while (display->nextPage());
-	}
-	U8G2_SSD1306_128X64_NONAME_F_SW_I2C * display_custom() {
-		return display;
 	}
 };
