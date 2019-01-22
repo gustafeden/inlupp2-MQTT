@@ -18,15 +18,19 @@ unsigned long currentMillis;
 unsigned long lastSent;
 
 void setup() {
+	pinMode(3, OUTPUT);
+	digitalWrite(3, HIGH);
 	Serial.begin(9600);
 	radio = new RFradio(new RH_ASK());
 	dht = new DHT11sensor(DHTPIN);
-
+	delay(1000);
+	digitalWrite(3, LOW);
 }
 
 void loop() {
 	currentMillis = millis();
 	if (currentMillis - lastSent > 4000) {
+		digitalWrite(3, HIGH);
 		StaticJsonBuffer<300> JSONbuffer;
 		JsonObject& JSONencoder = JSONbuffer.createObject();
 
@@ -42,7 +46,7 @@ void loop() {
 		for (int i = 0; i < 2; i++) {
 			radio->sendTextMessage(toSend);
 		}
-		
+		digitalWrite(3, LOW);
 
 	}
 }

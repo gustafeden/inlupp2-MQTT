@@ -22,7 +22,8 @@ PubSubClient client(wificlient);
 
 void setup() {
 	pinMode(BUILTIN_LED, OUTPUT);
-	pinMode(5, OUTPUT);
+	pinMode(22, OUTPUT);
+	digitalWrite(22, HIGH);
 	initSerial(115200);
 	display.WelcomeScreen();
 	delay(1000);

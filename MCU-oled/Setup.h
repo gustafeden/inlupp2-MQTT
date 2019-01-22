@@ -62,11 +62,12 @@ void callback(char* topic, byte* payload, unsigned int length) {
 	JsonObject&  parsed = JSONBuffer.parseObject(message);
 
 	display.ShowData(parsed["Temp"], parsed["Humid"]);
-	blink(4,100,5);
+	blink(2,100,22);
 
 }
 void reconnect() {
 	while (!client.connected()) {
+		digitalWrite(22, HIGH);
 		Serial.print("Attempting MQTT connection...");
 		display.mqttConnecting(mqtt_server);
 		blink(2,100, BUILTIN_LED);
@@ -78,11 +79,13 @@ void reconnect() {
 			client.subscribe(mqtt_topic);
 			Serial.print(" My client id: ");
 			Serial.println(clientId);
+			digitalWrite(22, LOW);
 		}
 		else {
 			Serial.print("failed, rc=");
 			Serial.print(client.state());
 			Serial.println(" try again in 5 seconds");
+			digitalWrite(22, LOW);
 			delay(5000);
 		}
 	}
